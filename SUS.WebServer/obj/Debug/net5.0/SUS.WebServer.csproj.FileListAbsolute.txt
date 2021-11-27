@@ -1,0 +1,15 @@
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\bin\Debug\net5.0\SUS.WebServer.deps.json
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\bin\Debug\net5.0\SUS.WebServer.dll
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\bin\Debug\net5.0\ref\SUS.WebServer.dll
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\bin\Debug\net5.0\SUS.WebServer.pdb
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\bin\Debug\net5.0\SUS.HTTP.dll
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\bin\Debug\net5.0\SUS.HTTP.pdb
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\obj\Debug\net5.0\SUS.WebServer.csproj.AssemblyReference.cache
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\obj\Debug\net5.0\SUS.WebServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\obj\Debug\net5.0\SUS.WebServer.AssemblyInfoInputs.cache
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\obj\Debug\net5.0\SUS.WebServer.AssemblyInfo.cs
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\obj\Debug\net5.0\SUS.WebServer.csproj.CoreCompileInputs.cache
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\obj\Debug\net5.0\SUS.WebServer.csproj.CopyComplete
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\obj\Debug\net5.0\SUS.WebServer.dll
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\obj\Debug\net5.0\ref\SUS.WebServer.dll
+C:\Users\My Family\source\repos\SUS\SUS.WebServer\obj\Debug\net5.0\SUS.WebServer.pdb

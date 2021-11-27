@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Demo.App/1.0.0": {
+        "dependencies": {
+          "SUS.HTTP": "1.0.0",
+          "SUS.WebServer": "1.0.0"
+        },
+        "runtime": {
+          "Demo.App.dll": {}
+        }
+      },
+      "SUS.HTTP/1.0.0": {
+        "runtime": {
+          "SUS.HTTP.dll": {}
+        }
+      },
+      "SUS.WebServer/1.0.0": {
+        "dependencies": {
+          "SUS.HTTP": "1.0.0"
+        },
+        "runtime": {
+          "SUS.WebServer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Demo.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SUS.HTTP/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SUS.WebServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

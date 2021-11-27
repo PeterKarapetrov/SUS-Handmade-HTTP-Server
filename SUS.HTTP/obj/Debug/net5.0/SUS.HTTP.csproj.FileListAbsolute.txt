@@ -1,0 +1,12 @@
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\bin\Debug\net5.0\SUS.HTTP.deps.json
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\bin\Debug\net5.0\SUS.HTTP.dll
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\bin\Debug\net5.0\ref\SUS.HTTP.dll
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\bin\Debug\net5.0\SUS.HTTP.pdb
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\obj\Debug\net5.0\SUS.HTTP.csproj.AssemblyReference.cache
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\obj\Debug\net5.0\SUS.HTTP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\obj\Debug\net5.0\SUS.HTTP.AssemblyInfoInputs.cache
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\obj\Debug\net5.0\SUS.HTTP.AssemblyInfo.cs
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\obj\Debug\net5.0\SUS.HTTP.csproj.CoreCompileInputs.cache
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\obj\Debug\net5.0\SUS.HTTP.dll
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\obj\Debug\net5.0\ref\SUS.HTTP.dll
+C:\Users\My Family\source\repos\SUS\SUS.HTTP\obj\Debug\net5.0\SUS.HTTP.pdb
