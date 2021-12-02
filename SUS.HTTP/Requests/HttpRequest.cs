@@ -4,6 +4,7 @@ using SUS.HTTP.Enums;
 using SUS.HTTP.Exceptions;
 using SUS.HTTP.Extensions;
 using SUS.HTTP.Headers;
+using SUS.HTTP.Sessions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,8 @@ namespace SUS.HTTP.Requests
         public string Path { get; private set; }
 
         public string Url { get; private set; }
+
+        public IHttpSession Session { get; set; }
 
         public Dictionary<string, object> FormData { get; }
 

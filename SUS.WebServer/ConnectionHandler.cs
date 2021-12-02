@@ -1,8 +1,10 @@
 ﻿using SUS.HTTP.Common;
+using SUS.HTTP.Cookies;
 using SUS.HTTP.Enums;
 using SUS.HTTP.Exceptions;
 using SUS.HTTP.Requests;
 using SUS.HTTP.Responses;
+using SUS.HTTP.Sessions;
 using SUS.WebServer.Results;
 using SUS.WebServer.Routing;
 using System;
@@ -36,8 +38,9 @@ namespace SUS.WebServer
                 if (httpRequest != null)
                 {
                     Console.WriteLine($"Procesing {httpRequest.RequestMethod} {httpRequest.Path}...");
-
+                    var sessionId = this.SetRequestSession(httpRequest);
                     var httpResponse = this.HandleRequest(httpRequest);
+                    this.SetResponseSession(httpResponse, sessionId);
 
                     await this.PrepareResponseAsync(httpResponse);
                 }
@@ -100,6 +103,31 @@ namespace SUS.WebServer
             byte[] byteSegments = httpResponse.GetBytes();
 
             await this.client.SendAsync(byteSegments, SocketFlags.None);
+        }
+
+        private string SetRequestSession(IHttpRequest httpRequest) 
+        {
+            string sessionId = null;
+
+            if (httpRequest.Cookies.ContainCookie(HttpSessionStorage.SessionKey))
+            {
+                sessionId = httpRequest.Cookies.GetCookie(HttpSessionStorage.SessionKey).Value;             
+            }
+            else 
+            {
+                sessionId = Guid.NewGuid().ToString();
+            }
+
+            httpRequest.Session = HttpSessionStorage.GetSession(sessionId);
+            return httpRequest.Session.Id;
+        }
+
+        private void SetResponseSession(IHttpResponse httpResponse, string sessionId) 
+        {
+            if (sessionId != null)
+            {
+                httpResponse.AddCookie(new HttpCookie(HttpSessionStorage.SessionKey, sessionId));
+            }    
         }
     }
 }

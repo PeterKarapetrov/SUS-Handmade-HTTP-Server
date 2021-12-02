@@ -1,5 +1,7 @@
-﻿using SUS.HTTP.Enums;
+﻿using SUS.HTTP.Cookies;
+using SUS.HTTP.Enums;
 using SUS.HTTP.Headers;
+using SUS.HTTP.Sessions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,8 @@ namespace SUS.HTTP.Requests
 
         string Url { get; }
 
+        IHttpSession Session { get; set; }
+
         Dictionary<string, object> FormData { get;  }
 
         Dictionary<string, object> QueryData{ get; }
@@ -21,5 +25,7 @@ namespace SUS.HTTP.Requests
         IHttpHeaderCollection Headers { get; }
 
         HttpRequestMethod RequestMethod { get;  }
+
+        IHttpCookieCollection Cookies { get; }
     }
 }

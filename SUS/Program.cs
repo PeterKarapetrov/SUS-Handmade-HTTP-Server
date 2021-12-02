@@ -17,10 +17,12 @@ namespace SUS
         {
             ServerRoutingTable serverRoutingTable = new ServerRoutingTable();
 
-            serverRoutingTable.Add(
-                HttpRequestMethod.Get, 
-                "/", 
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/", 
                 httpRequest => new HomeController().Index(httpRequest));
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/login",
+                httpRequest => new HomeController().Login(httpRequest));
+            serverRoutingTable.Add(HttpRequestMethod.Get, "/logout",
+                httpRequest => new HomeController().Logout(httpRequest));
 
             Server server = new Server(8000, serverRoutingTable);
             server.Run();
