@@ -45,6 +45,6 @@ namespace SUS.HTTP.Headers
             }
         }
 
-        public override string ToString() => string.Join("\r\n", this.headers.Values.Select(header => header.ToString()));
+        public override string ToString() => string.Join(GlobalConstants.HttpNewLine, this.headers.Values.Select(header => header.ToString()));
     }
 }

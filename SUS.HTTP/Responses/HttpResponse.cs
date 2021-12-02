@@ -1,4 +1,5 @@
 ﻿using SUS.HTTP.Common;
+using SUS.HTTP.Cookies;
 using SUS.HTTP.Enums;
 using SUS.HTTP.Headers;
 using System;
@@ -15,6 +16,7 @@ namespace SUS.HTTP.Responses
         {
             this.Headers = new HttpHeaderCollection();
             this.Content = new byte[0];
+            this.Cookies = new HttpCookieCollection();
         }
 
         public HttpResponse(HttpResponseStatusCode statusCode)
@@ -29,6 +31,15 @@ namespace SUS.HTTP.Responses
         public IHttpHeaderCollection Headers { get; }
 
         public byte[] Content { get; set; }
+
+        public IHttpCookieCollection Cookies { get; }
+
+        public void AddCookie(HttpCookie cookie)
+        {
+            CoreValidator.ThrowIfNull(cookie, nameof(cookie));
+
+            this.Cookies.AddCookie(cookie);
+        }
 
         public void AddHeader(HttpHeader header)
         {
@@ -57,6 +68,12 @@ namespace SUS.HTTP.Responses
                 .Append(GlobalConstants.HttpNewLine)
                 .Append(this.Headers)
                 .Append(GlobalConstants.HttpNewLine);
+
+            if (this.Cookies.HasCookies())
+            {                
+                result.Append(this.Cookies)
+                      .Append(GlobalConstants.HttpNewLine);          
+            }
 
             result.Append(GlobalConstants.HttpNewLine);
 

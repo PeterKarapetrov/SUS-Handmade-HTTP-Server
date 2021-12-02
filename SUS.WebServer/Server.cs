@@ -40,16 +40,16 @@ namespace SUS.WebServer
             {
                 Console.WriteLine("Waiting for client...");
 
-                var client = this.tcpListener.AcceptSocket();
+                var client = this.tcpListener.AcceptSocketAsync().GetAwaiter().GetResult();
 
-                this.Listen(client);
+                Task.Run(() => this.ListenAsync(client));
             }
         }
 
-        private void Listen(Socket client) 
+        private async void ListenAsync(Socket client) 
         {
             var connectionHandler = new ConnectionHandler(client, this.serverRoutingTable);
-            connectionHandler.ProcessRequest();
+            await connectionHandler.ProcessRequestAsync();
         }
     }
 }

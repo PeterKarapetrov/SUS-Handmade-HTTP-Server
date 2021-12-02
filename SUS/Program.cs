@@ -1,4 +1,5 @@
-﻿using SUS.HTTP.Enums;
+﻿using Demo.App;
+using SUS.HTTP.Enums;
 using SUS.HTTP.Headers;
 using SUS.HTTP.Requests;
 using SUS.HTTP.Responses;
@@ -16,10 +17,10 @@ namespace SUS
         {
             ServerRoutingTable serverRoutingTable = new ServerRoutingTable();
 
-            serverRoutingTable.Add(HttpRequestMethod.Get, "/", httpRequest =>
-            {
-                return new HtmlResult("<h1>Hello World!</h1>", HttpResponseStatusCode.Ok);
-            });
+            serverRoutingTable.Add(
+                HttpRequestMethod.Get, 
+                "/", 
+                httpRequest => new HomeController().Index(httpRequest));
 
             Server server = new Server(8000, serverRoutingTable);
             server.Run();

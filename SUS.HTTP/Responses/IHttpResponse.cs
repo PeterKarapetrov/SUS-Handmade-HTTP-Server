@@ -1,4 +1,5 @@
-﻿using SUS.HTTP.Enums;
+﻿using SUS.HTTP.Cookies;
+using SUS.HTTP.Enums;
 using SUS.HTTP.Headers;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,13 @@ namespace SUS.HTTP.Responses
 
         IHttpHeaderCollection Headers { get;  }
 
+        IHttpCookieCollection Cookies { get; }
+
         byte[] Content { get; set; }
 
         void AddHeader(HttpHeader header);
+
+        void AddCookie(HttpCookie cookie);
 
         byte[] GetBytes();
     }

@@ -1,4 +1,5 @@
 ﻿using SUS.HTTP.Common;
+using SUS.HTTP.Cookies;
 using SUS.HTTP.Enums;
 using SUS.HTTP.Exceptions;
 using SUS.HTTP.Extensions;
@@ -20,6 +21,7 @@ namespace SUS.HTTP.Requests
             this.FormData = new Dictionary<string, object>();
             this.QueryData = new Dictionary<string, object>();
             this.Headers = new HttpHeaderCollection();
+            this.Cookies = new HttpCookieCollection();
 
             this.ParseRequest(requestString);
         }
@@ -33,6 +35,8 @@ namespace SUS.HTTP.Requests
         public Dictionary<string, object> QueryData { get; }
 
         public IHttpHeaderCollection Headers { get;  }
+
+        public IHttpCookieCollection Cookies { get;  }
 
         public HttpRequestMethod RequestMethod { get; private set; }
 
@@ -52,8 +56,9 @@ namespace SUS.HTTP.Requests
             this.ParseRequestPath();
 
             this.ParseRequestHeaders(splitRequestContent.Skip(1).ToArray());
-            //this.ParseRequestCookies();
 
+            this.ParseRequestCookies();
+            
             this.ParseRequestParameters(splitRequestContent[splitRequestContent.Length - 1]);
         }
 
@@ -68,7 +73,19 @@ namespace SUS.HTTP.Requests
 
         private void ParseRequestCookies()
         {
-            throw new NotImplementedException();
+            if (this.Headers.ContainsHeader(HttpHeader.Cookie))
+            {
+                var cookies = this.Headers.GetHeader(HttpHeader.Cookie).Value.Split("; ", StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var cookie in cookies)
+                {
+                    var cookieTokens = cookie.Split("=", StringSplitOptions.RemoveEmptyEntries);
+
+                    var newCookie = new HttpCookie(cookieTokens[0], cookieTokens[1], false);
+
+                    this.Cookies.AddCookie(newCookie);
+                }
+            }      
         }
 
         private void ParseRequestHeaders(string[] unparsedHeaders)
